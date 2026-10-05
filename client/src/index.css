@@ -1,0 +1,139 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+
+     /* =========================================
+       OʻAHU COASTAL COLOR SYSTEM
+    ========================================= */
+
+    --ocean-deep: #123B4A;
+    --ocean: #2F7180;
+    --seafoam: #8FB9AE;
+    --seafoam-light: #E4EFEC;
+
+    --sand: #D8B879;
+    --sand-light: #F7F5EF;
+
+    --white: #FFFFFF;
+
+    --text-primary: #243238;
+    --text-secondary: #68777B;
+    --text-muted: #98A4A7;
+
+    --border: #DDE5E4;
+    --border-light: #E9EEEC;
+
+    /* Semantic colors */
+    --primary-color: var(--ocean);
+    --primary-dark: var(--ocean-deep);
+    --accent-color: var(--sand);
+
+    --background: var(--sand-light);
+    --surface: var(--white);
+
+    color: var(--text-primary);
+    background: var(--background);
+}
+
+
+/* =========================================
+   RESET
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+
+    min-width: 320px;
+    min-height: 100%;
+
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    min-width: 320px;
+    min-height: 100vh;
+
+    background: var(--background);
+    color: var(--text-primary);
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================
+   REACT ROOT
+========================================= */
+
+#root {
+    min-height: 100vh;
+    width: 100%;
+}
+
+
+/* =========================================
+   DEFAULT TYPOGRAPHY
+========================================= */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-top: 0;
+}
+
+p {
+    margin-top: 0;
+}
+
+
+/* =========================================
+   ACCESSIBILITY
+========================================= */
+
+:focus-visible {
+    outline: 3px solid rgba(47, 113, 128, 0.25);
+    outline-offset: 3px;
+}
+
+
+
+/* =========================================
+   SELECTION
+========================================= */
+
+::selection {
+    background: var(--ocean);
+    color: var(--white);
+}

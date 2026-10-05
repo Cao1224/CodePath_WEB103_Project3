@@ -1,0 +1,150 @@
+/* =========================================
+   FILTER BAR
+========================================= */
+
+.filter-bar {
+    width: 100%;
+  
+    padding: 24px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+    border-radius: 12px;
+
+    box-shadow:
+        0 4px 18px rgba(36, 50, 56, 0.04);
+
+    display: grid;
+    grid-template-columns:
+        minmax(240px, 2fr)
+        minmax(160px, 1fr)
+        minmax(160px, 1fr)
+        minmax(140px, 0.8fr);
+
+    gap: 12px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   INPUT + SELECT
+========================================= */
+
+.filter-bar input,
+.filter-bar select {
+    width: 100%;
+    height: 50px;
+
+    padding: 0 16px;
+
+    border: 1px solid var(--border);
+    border-radius: 7px;
+
+    background-color: var(--white);
+
+    color: var(--text-primary);
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+
+    outline: none;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background-color 0.2s ease;
+}
+
+
+/* =========================================
+   SEARCH INPUT
+========================================= */
+
+.filter-bar input {
+    padding-left: 17px;
+}
+
+.filter-bar input::placeholder {
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.filter-bar input:hover,
+.filter-bar select:hover {
+    border-color: #b8bdc8;
+}
+
+.filter-bar input:focus,
+.filter-bar select:focus {
+    border-color: var(--ocean);
+
+    box-shadow:
+        0 0 0 3px rgba(47, 113, 128, 0.1);
+
+    background-color: var(--white);
+}
+
+
+/* =========================================
+   SELECT
+========================================= */
+
+.filter-bar select {
+    appearance: none;
+
+    padding-right: 42px;
+
+    cursor: pointer;
+
+    background-image:
+        linear-gradient(45deg, transparent 50%, #6b7280 50%),
+        linear-gradient(135deg, #6b7280 50%, transparent 50%);
+
+    background-position:
+        calc(100% - 18px) 21px,
+        calc(100% - 13px) 21px;
+
+    background-size:
+        5px 5px,
+        5px 5px;
+
+    background-repeat: no-repeat;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+    .filter-bar {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .filter-bar input {
+        grid-column: 1 / -1;
+    }
+}
+
+
+@media (max-width: 650px) {
+    .filter-bar {
+        padding: 18px;
+
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+    .filter-bar input {
+        grid-column: auto;
+    }
+
+    .filter-bar input,
+    .filter-bar select {
+        height: 48px;
+    }
+}

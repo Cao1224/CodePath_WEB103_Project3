@@ -1,0 +1,390 @@
+/* =========================================
+   EVENT DETAIL PAGE
+========================================= */
+
+.event-detail {
+    width: min(1180px, 88vw);
+
+    margin: 0 auto;
+    padding: 50px 0 100px;
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================
+   BACK LINK
+========================================= */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    margin-bottom: 28px;
+
+    font-size: 0.9rem;
+    font-weight: 800;
+
+    color: var(--ocean);
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.back-link:hover {
+    color: var(--ocean-deep);
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================
+   MAIN IMAGE
+========================================= */
+
+.event-detail-image {
+    width: 100%;
+    height: min(560px, 55vw);
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    background: #e8eeec;
+
+    box-shadow: 0 8px 30px rgba(36, 50, 56, 0.08);
+}
+
+
+/* =========================================
+   CONTENT
+========================================= */
+
+.event-detail-content {
+    width: min(900px, 100%);
+
+    margin: -55px auto 0;
+
+    position: relative;
+    z-index: 2;
+
+    padding: 42px 50px 55px;
+
+    background: var(--white);
+
+    border: 1px solid var(--border-light);
+    border-radius: 14px;
+
+    box-shadow:
+        0 10px 35px rgba(36, 50, 56, 0.08);
+}
+
+
+/* =========================================
+   CATEGORY
+========================================= */
+
+.event-detail-content .event-category {
+    display: inline-block;
+
+    margin-bottom: 16px;
+
+    padding: 6px 11px;
+
+    border-radius: 5px;
+
+    background: var(--seafoam-light);
+    color: var(--ocean);
+
+    font-size: 0.7rem;
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.event-detail-content h1 {
+    margin: 0 0 22px;
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4.5rem);
+
+    line-height: 1.02;
+
+    font-weight: 900;
+
+    letter-spacing: -0.045em;
+
+    color: var(--ocean-deep);
+
+    text-transform: none;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.event-detail-description {
+    margin: 0 0 38px;
+
+    max-width: 780px;
+
+    font-size: 1.08rem;
+    line-height: 1.8;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   EVENT INFORMATION
+========================================= */
+
+.event-info {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 1px;
+
+    margin-bottom: 45px;
+
+    overflow: hidden;
+
+    border: 1px solid var(--border);
+    border-radius: 10px;
+
+    background: var(--border);
+}
+
+.event-info > div {
+    min-height: 105px;
+
+    padding: 22px 24px;
+
+    background: var(--white);
+}
+
+.event-info strong {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 0.72rem;
+    font-weight: 900;
+
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+
+    color: var(--ocean);
+}
+
+.event-info p {
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    font-weight: 700;
+
+    color: var(--text-primary);
+}
+
+
+/* =========================================
+   ORGANIZER
+========================================= */
+
+.organizer {
+    margin-bottom: 40px;
+
+    padding-top: 35px;
+
+    border-top: 1px solid var(--border-light);
+}
+
+.organizer h2 {
+    margin: 0 0 18px;
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 1.55rem;
+
+    font-weight: 900;
+
+    letter-spacing: -0.025em;
+
+    color: var(--ocean-deep);
+
+    text-transform: none;
+}
+
+.organizer h3 {
+    margin: 0 0 8px;
+
+    font-family: "Nunito Sans", Arial, sans-serif;
+    font-size: 1.05rem;
+
+    font-weight: 800;
+
+    color: var(--text-primary);
+
+    text-transform: none;
+}
+
+.organizer p {
+    max-width: 750px;
+
+    margin: 0;
+
+    font-size: 0.95rem;
+    line-height: 1.7;
+
+    color: var(--text-secondary);
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-bottom: 35px;
+}
+
+.tags span {
+    display: inline-flex;
+    align-items: center;
+
+    padding: 7px 12px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    background: #FAFCFB;
+    color: var(--text-secondary);
+
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+
+/* =========================================
+   WEBSITE LINK
+========================================= */
+
+.event-detail-content > a:last-child {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    min-height: 46px;
+
+    padding: 0 20px;
+
+    border: 1px solid var(--ocean-deep);
+    border-radius: 7px;
+
+    background: var(--ocean-deep);
+
+    color: var(--white);
+
+    font-size: 0.88rem;
+    font-weight: 800;
+
+    text-decoration: none;
+
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.event-detail-content > a:last-child:hover {
+    background: var(--ocean);
+    border-color: var(--ocean);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+    .event-detail {
+        width: 90vw;
+
+        padding: 35px 0 70px;
+    }
+
+    .event-detail-image {
+        height: 420px;
+
+        border-radius: 10px;
+    }
+
+    .event-detail-content {
+        margin-top: -35px;
+
+        padding: 32px 30px 40px;
+
+        border-radius: 10px;
+    }
+
+    .event-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+@media (max-width: 550px) {
+    .event-detail {
+        width: 92vw;
+    }
+
+    .event-detail-image {
+        height: 300px;
+
+        border-radius: 8px;
+    }
+
+    .event-detail-content {
+        margin-top: -20px;
+
+        padding: 27px 22px 32px;
+
+        border-radius: 8px;
+    }
+
+    .event-detail-content h1 {
+        font-size: 2.35rem;
+    }
+
+    .event-detail-description {
+        font-size: 0.95rem;
+        line-height: 1.7;
+    }
+
+    .event-info > div {
+        min-height: auto;
+
+        padding: 18px;
+    }
+}
