@@ -1,10 +1,14 @@
+
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import EventCard from "../components/EventCard";
 import FilterBar from "../components/FilterBar";
 import { getAllEvents } from "../services/EventsAPI";
 import "../css/Home.css";
 
 function Home() {
+    const navigate = useNavigate();
+
     const [events, setEvents] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
@@ -30,17 +34,55 @@ function Home() {
     }, []);
 
     const categories = [
-        ...new Set(events.map((event) => event.category))
-    ];
+        ...new Set(
+            events.map((event) => event.category).filter(Boolean)
+        ),
+    ].sort();
 
     const locations = [
-        ...new Set(events.map((event) => event.location))
-    ];
+        ...new Set(
+            events.map((event) => event.location).filter(Boolean)
+        ),
+    ].sort();
+
+    // Build location cards from the existing event data.
+    const locationCards = locations.map((name) => {
+        const locationEvents = events.filter(
+            (event) => event.location === name
+        );
+
+        return {
+            name,
+            eventCount: locationEvents.length,
+            image:
+                locationEvents.find((event) => event.image_url)
+                    ?.image_url || "",
+        };
+    });
+
+    // Navigate to a location detail page.
+    const handleLocationChange = (selectedLocation) => {
+        setLocation(selectedLocation);
+
+        if (selectedLocation) {
+            navigate(
+                `/locations/${encodeURIComponent(selectedLocation)}`
+            );
+        }
+    };
+
+    const handleLocationClick = (selectedLocation) => {
+        navigate(
+            `/locations/${encodeURIComponent(selectedLocation)}`
+        );
+    };
 
     const filteredEvents = events.filter((event) => {
+        const searchTerm = search.toLowerCase();
+
         const matchesSearch =
-            event.title.toLowerCase().includes(search.toLowerCase()) ||
-            event.description.toLowerCase().includes(search.toLowerCase());
+            (event.title || "").toLowerCase().includes(searchTerm) ||
+            (event.description || "").toLowerCase().includes(searchTerm);
 
         const matchesCategory =
             !category || event.category === category;
@@ -50,8 +92,10 @@ function Home() {
 
         const matchesPrice =
             !price ||
-            (price === "Free" && event.price?.toLowerCase() === "free") ||
-            (price === "Paid" && event.price?.toLowerCase() !== "free");
+            (price === "Free" &&
+                event.price?.toLowerCase() === "free") ||
+            (price === "Paid" &&
+                event.price?.toLowerCase() !== "free");
 
         return (
             matchesSearch &&
@@ -62,18 +106,18 @@ function Home() {
     });
 
     if (loading) {
-        return <p>Loading events...</p>;
+        return <p className="home-status">Loading events...</p>;
     }
 
     if (error) {
-        return <p>Error: {error}</p>;
+        return <p className="home-status">Error: {error}</p>;
     }
 
     return (
         <main>
+            {/* Hero */}
             <section className="home-hero">
                 <div className="home-hero-inner">
-
                     <div className="hero-content">
                         <p className="hero-eyebrow">
                             LOCAL GUIDE TO THE ISLAND
@@ -95,15 +139,88 @@ function Home() {
                         <strong>{events.length}</strong>
                         <span>EVENTS TO EXPLORE</span>
                     </div>
-
                 </div>
             </section>
 
+            {/* Visual location selector */}
+            <section className="locations-section">
+                <div className="section-heading locations-heading">
+                    <div>
+                        <p className="section-eyebrow">
+                            EXPLORE THE ISLAND
+                        </p>
+                        <h2>Explore by Location</h2>
+                        <p className="section-description">
+                            Find local events and activities in your
+                            favorite Oʻahu neighborhoods and destinations.
+                        </p>
+                    </div>
+
+                    <span className="location-total">
+                        {locationCards.length} destinations
+                    </span>
+                </div>
+
+                <div className="location-grid">
+                    {locationCards.map((place) => (
+                        <button
+                            type="button"
+                            className="location-card"
+                            key={place.name}
+                            onClick={() =>
+                                handleLocationClick(place.name)
+                            }
+                            aria-label={`Explore ${place.name}, ${place.eventCount} events`}
+                        >
+                            <div className="location-card-image">
+                                {place.image ? (
+                                    <img
+                                        src={place.image}
+                                        alt={`${place.name}, Oʻahu`}
+                                        loading="lazy"
+                                    />
+                                ) : (
+                                    <div className="location-image-placeholder">
+                                        <span>
+                                            {place.name.charAt(0)}
+                                        </span>
+                                    </div>
+                                )}
+
+                                <span className="location-event-badge">
+                                    {place.eventCount}{" "}
+                                    {place.eventCount === 1
+                                        ? "event"
+                                        : "events"}
+                                </span>
+                            </div>
+
+                            <div className="location-card-content">
+                                <h3>{place.name}</h3>
+                                <span className="location-card-link">
+                                    Explore location
+                                    <span aria-hidden="true">↗</span>
+                                </span>
+                            </div>
+                        </button>
+                    ))}
+                </div>
+            </section>
+
+            {/* Events and filters */}
             <section className="events-section">
                 <div className="section-heading">
-                    <h2>Find an Event</h2>
-                    <p>
-                        {filteredEvents.length} events found
+                    <div>
+                        <h2>Find an Event</h2>
+                        <p className="section-description">
+                            Search and filter activities across Oʻahu.
+                        </p>
+                    </div>
+
+                    <p className="event-results-count">
+                        {filteredEvents.length}{" "}
+                        {filteredEvents.length === 1 ? "event" : "events"}{" "}
+                        found
                     </p>
                 </div>
 
@@ -113,7 +230,7 @@ function Home() {
                     category={category}
                     setCategory={setCategory}
                     location={location}
-                    setLocation={setLocation}
+                    onLocationChange={handleLocationChange}
                     price={price}
                     setPrice={setPrice}
                     categories={categories}
@@ -129,7 +246,9 @@ function Home() {
                             />
                         ))
                     ) : (
-                        <p>No events found.</p>
+                        <p className="no-events">
+                            No events found. Try changing your filters.
+                        </p>
                     )}
                 </div>
             </section>

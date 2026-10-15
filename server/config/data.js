@@ -8,8 +8,6 @@ const places = [
     description:
       "Join a relaxing outdoor yoga session near Waikīkī Beach while enjoying the sunset and ocean views. All experience levels are welcome.",
     location: "Waikiki",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Honolulu+HI",
     address: "Waikīkī Beach, Honolulu, HI 96815",
     category: "Wellness",
     event_date: "2026-10-10 17:30:00",
@@ -30,8 +28,6 @@ const places = [
     description:
       "Meet other local surfers for a casual morning surf session in Waikīkī. Participants should bring their own board or arrange a rental nearby.",
     location: "Waikiki",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Honolulu+HI",
     address: "Waikīkī Beach, Honolulu, HI 96815",
     category: "Sports",
     event_date: "2026-10-18 07:00:00",
@@ -52,8 +48,6 @@ const places = [
     description:
       "Explore Waikīkī during golden hour and practice beach, architecture, and street photography with other local photographers.",
     location: "Waikiki",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waikiki+Beach+Honolulu+HI",
     address: "Waikīkī Beach, Honolulu, HI 96815",
     category: "Photography",
     event_date: "2026-10-24 16:30:00",
@@ -78,8 +72,6 @@ const places = [
     description:
       "Browse handmade art, jewelry, clothing, food, and locally designed products from Oʻahu creators.",
     location: "Kakaako",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Kakaako+Waterfront+Park+Honolulu+HI",
     address: "102 Ohe St, Honolulu, HI 96813",
     category: "Arts",
     event_date: "2026-10-11 10:00:00",
@@ -100,8 +92,6 @@ const places = [
     description:
       "Help keep the Kakaʻako coastline clean during a community volunteer morning. Gloves and basic cleanup supplies will be provided.",
     location: "Kakaako",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Kakaako+Waterfront+Park+Honolulu+HI",
     address: "102 Ohe St, Honolulu, HI 96813",
     category: "Environment",
     event_date: "2026-10-17 08:00:00",
@@ -122,8 +112,6 @@ const places = [
     description:
       "Take an evening walk through Kakaʻako to explore public art, murals, and local creative spaces.",
     location: "Kakaako",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Kakaako+Honolulu+HI",
     address: "Kakaʻako, Honolulu, HI 96813",
     category: "Arts",
     event_date: "2026-09-20 17:00:00",
@@ -148,8 +136,6 @@ const places = [
     description:
       "Join a local hiking group for a morning adventure through the lush Manoa area. Bring water, comfortable shoes, and sun protection.",
     location: "Manoa",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Manoa+Falls+Trail+Honolulu+HI",
     address: "Manoa Falls Trail, Honolulu, HI 96822",
     category: "Hiking",
     event_date: "2026-10-12 08:00:00",
@@ -170,8 +156,6 @@ const places = [
     description:
       "Learn about native Hawaiian plants and their role in local ecosystems during an educational community workshop.",
     location: "Manoa",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Manoa+Honolulu+HI",
     address: "Manoa, Honolulu, HI 96822",
     category: "Environment",
     event_date: "2026-10-22 09:00:00",
@@ -196,8 +180,6 @@ const places = [
     description:
       "Start the morning with a casual paddle along the Kailua coastline. This meetup is designed for beginners and intermediate paddlers.",
     location: "Kailua",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Kailua+Beach+Park+Hawaii",
     address: "526 Kawailoa Rd, Kailua, HI 96734",
     category: "Sports",
     event_date: "2026-10-15 06:30:00",
@@ -218,8 +200,6 @@ const places = [
     description:
       "Meet local residents and families for a relaxed community picnic with games, food, and beach activities.",
     location: "Kailua",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Kailua+Beach+Park+Hawaii",
     address: "526 Kawailoa Rd, Kailua, HI 96734",
     category: "Community",
     event_date: "2026-10-25 11:00:00",
@@ -244,8 +224,6 @@ const places = [
     description:
       "Meet other photographers before sunrise and capture the changing colors of the Windward Coast.",
     location: "Lanikai",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Lanikai+Beach+Hawaii",
     address: "Lanikai Beach, Kailua, HI 96734",
     category: "Photography",
     event_date: "2026-10-08 05:45:00",
@@ -270,8 +248,6 @@ const places = [
     description:
       "Volunteer with other community members to remove marine debris and litter from the North Shore coastline.",
     location: "Waimea Bay",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waimea+Bay+Beach+Park+Hawaii",
     address: "61-031 Kamehameha Hwy, Haleiwa, HI 96712",
     category: "Environment",
     event_date: "2026-10-13 08:00:00",
@@ -292,8 +268,6 @@ const places = [
     description:
       "Learn techniques for photographing surfers, waves, and coastal landscapes with an experienced local photographer.",
     location: "Waimea Bay",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waimea+Bay+Beach+Park+Hawaii",
     address: "61-031 Kamehameha Hwy, Haleiwa, HI 96712",
     category: "Photography",
     event_date: "2026-11-07 07:00:00",
@@ -318,8 +292,6 @@ const places = [
     description:
       "Explore the botanical gardens and cultural landscape of Waimea Valley with a small group interested in Hawaiian plants and history.",
     location: "Waimea Valley",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Waimea+Valley+Haleiwa+HI",
     address: "59-864 Kamehameha Hwy, Haleiwa, HI 96712",
     category: "Nature",
     event_date: "2026-10-19 09:00:00",
@@ -344,8 +316,6 @@ const places = [
     description:
       "Learn about coral reefs, marine life, and responsible ocean recreation during an educational community event.",
     location: "Hanauma Bay",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Hanauma+Bay+Nature+Preserve+Honolulu+HI",
     address: "100 Hanauma Bay Rd, Honolulu, HI 96825",
     category: "Environment",
     event_date: "2026-10-21 08:00:00",
@@ -366,8 +336,6 @@ const places = [
     description:
       "A small-group snorkeling meetup for people interested in exploring the protected marine environment of Hanauma Bay.",
     location: "Hanauma Bay",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Hanauma+Bay+Nature+Preserve+Honolulu+HI",
     address: "100 Hanauma Bay Rd, Honolulu, HI 96825",
     category: "Ocean",
     event_date: "2026-11-01 07:00:00",
@@ -392,8 +360,6 @@ const places = [
     description:
       "Take on an early-morning group hike up the historic Koko Crater Railway Trail and watch the sunrise from the summit.",
     location: "Koko Head",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Koko+Head+District+Park+Honolulu+HI",
     address: "423 Kaumakani St, Honolulu, HI 96825",
     category: "Hiking",
     event_date: "2026-10-09 05:30:00",
@@ -414,8 +380,6 @@ const places = [
     description:
       "A group fitness session using the Koko Crater Railway Trail as a challenging outdoor workout.",
     location: "Koko Head",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Koko+Head+District+Park+Honolulu+HI",
     address: "423 Kaumakani St, Honolulu, HI 96825",
     category: "Fitness",
     event_date: "2026-10-27 06:00:00",
@@ -440,8 +404,6 @@ const places = [
     description:
       "Start the day with a group hike along the Diamond Head Summit Trail and enjoy panoramic views of Waikīkī and the Oʻahu coastline.",
     location: "Diamond Head",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument+Honolulu+HI",
     address: "Diamond Head Rd, Honolulu, HI 96816",
     category: "Hiking",
     event_date: "2026-10-14 07:00:00",
@@ -462,8 +424,6 @@ const places = [
     description:
       "Explore the geological and military history of Lēʻahi while walking around the Diamond Head area with a local history enthusiast.",
     location: "Diamond Head",
-    google_map_url:
-      "https://www.google.com/maps/search/?api=1&query=Diamond+Head+State+Monument+Honolulu+HI",
     address: "Diamond Head Rd, Honolulu, HI 96816",
     category: "History",
     event_date: "2026-09-15 09:00:00",

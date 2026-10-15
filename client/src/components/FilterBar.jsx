@@ -6,15 +6,14 @@ function FilterBar({
     category,
     setCategory,
     location,
-    setLocation,
+    onLocationChange,
     price,
     setPrice,
     categories,
-    locations
+    locations,
 }) {
     return (
         <div className="filter-bar">
-
             <input
                 type="text"
                 placeholder="Search events..."
@@ -37,7 +36,9 @@ function FilterBar({
 
             <select
                 value={location}
-                onChange={(e) => setLocation(e.target.value)}
+                onChange={(e) =>
+                    onLocationChange(e.target.value)
+                }
             >
                 <option value="">All Locations</option>
 
@@ -56,7 +57,6 @@ function FilterBar({
                 <option value="Free">Free</option>
                 <option value="Paid">Paid</option>
             </select>
-
         </div>
     );
 }

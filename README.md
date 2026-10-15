@@ -38,6 +38,18 @@ Here's a walkthrough of implemented required features:
 <img src='project3-demo.mov' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 
+## Notes
+
+Last Updated: October 14, 2026
+
+I made several improvements to my Explore Oʻahu project to better meet the assignment requirements and improve the overall user experience.
+
+- **Visual Location Selection**: Added an “Explore by Location” section to the homepage with clickable location cards, images, location names, and event counts. Users can now explore destinations visually instead of relying only on a dropdown filter.
+- **Unique Location Detail Pages**: Implemented location-specific URLs using React Router, such as /locations/Waikiki and /locations/Manoa.
+- **Location-Specific Events**: Connected each location card to its detail page, where users can view events associated with that location.
+- **Database Normalization**: Restructured the database into separate locations and places tables using a foreign key (location_id) to establish relationships between locations and events.
+- **Environment Configuration**: Replaced the hardcoded API URL with a Vite environment variable (VITE_API_URL) to support both local development and production deployment.
+
 ## License
 
 Copyright 2026 Yuancheng Cao

@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000/api/places";
+const API_URL = import.meta.env.VITE_API_URL;
 
 // Get all events
 export const getAllEvents = async () => {
@@ -32,6 +32,30 @@ export const getEventById = async (id) => {
         return await response.json();
     } catch (error) {
         console.error(`Error fetching event ${id}:`, error);
+        throw error;
+    }
+};
+
+
+ // Get all events at a specific location
+export const getEventsByLocation = async (location) => {
+    try {
+        const response = await fetch(
+            `${API_URL}/location/${encodeURIComponent(location)}`
+        );
+
+        if (!response.ok) {
+            throw new Error(
+                `Failed to fetch events by location: ${response.status}`
+            );
+        }
+
+        return await response.json();
+    } catch (error) {
+        console.error(
+            `Error fetching events for ${location}:`,
+            error
+        );
         throw error;
     }
 };
